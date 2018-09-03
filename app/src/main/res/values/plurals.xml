@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="numberOfResultsFound">
+        <item quantity="one">%d Result</item>
+        <item quantity="other">%d Results</item>
+    </plurals>
+</resources>

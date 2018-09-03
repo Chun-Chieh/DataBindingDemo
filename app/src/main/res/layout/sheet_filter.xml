@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.chunchiehliang.networktest.ui.FilterBottomSheet.BottomSheetOnClickHandler" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_filter_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/md_margin"
+            android:layout_marginEnd="@dimen/md_margin"
+            android:layout_marginStart="@dimen/md_margin"
+            android:layout_marginTop="@dimen/md_margin"
+            android:text="@string/filter_label"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_filter_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/md_margin"
+            android:layout_marginEnd="@dimen/md_margin"
+            android:layout_marginStart="@dimen/md_margin"
+            android:layout_marginTop="@dimen/md_margin"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/raleway_bold"
+            android:onClick="@{handler::onTextClick}"
+            android:text="@string/time"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_filter_label" />
+
+        <TextView
+            android:id="@+id/text_filter_mag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/md_margin"
+            android:layout_marginEnd="@dimen/md_margin"
+            android:layout_marginStart="@dimen/md_margin"
+            android:layout_marginTop="@dimen/md_margin"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/raleway_bold"
+            android:onClick="@{handler::onTextClick}"
+            android:text="@string/magnitude"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_filter_time" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

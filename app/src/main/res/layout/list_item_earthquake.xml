@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="earthquake"
+            type="com.chunchiehliang.networktest.model.Earthquake" />
+
+        <import type="com.chunchiehliang.networktest.util.StringUtils" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/md_margin">
+
+        <TextView
+            android:id="@+id/text_view_magnitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/magnitude_circle"
+            android:gravity="center"
+            android:text="@{StringUtils.formatMagnitude(earthquake.magnitude)}"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            tools:text="6.2" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/md_margin"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:text="@{earthquake.locationOffset ?? @string/near_the}"
+                android:textAllCaps="true"
+                android:textColor="@color/textColorEarthquakeDetails"
+                android:textSize="12sp"
+                tools:text="88km N of" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="marquee"
+                android:maxLines="2"
+                android:text="@{earthquake.primaryLocation}"
+                android:textColor="@color/textColorEarthquakeLocation"
+                android:textSize="16sp"
+                tools:text="Yelizovo, Russia" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/md_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="@{StringUtils.formatDateString(earthquake.time)}"
+                android:textColor="@color/textColorEarthquakeDetails"
+                android:textSize="12sp"
+                tools:text="Jan 26, 2016" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="@{StringUtils.formatTimeString(earthquake.time)}"
+                android:textColor="@color/textColorEarthquakeDetails"
+                android:textSize="12sp"
+                tools:text="9:25 PM" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
